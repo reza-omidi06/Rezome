@@ -1,0 +1,36 @@
+.input_button{
+    margin: 1rem auto;
+}
+.btn_style_first-pg{
+    color: #fff;
+    border: 1px solid #696cff;
+    background-color: #696cff;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 6px;
+    width: fit-content;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        direction: rtl;
+    }
+}
+.span_label{
+    color:#f30909;
+    font-size:1rem;
+}
+.accordion-button::after {
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    transform: translateY(-50%) rotate(180deg);
+}
+.accordion-form{
+    margin: auto 2.5rem;
+}
+.li-edit-view{
+    font-size: 3rem;
+    border: 1px solid #d9dee2;
+    padding: 1% 0;
+    margin: 8px auto;
+}
