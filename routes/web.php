@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Pages\AboutController;
+use App\Http\Controllers\Pages\RezomeController;
 use App\Http\Controllers\Pages\ServicesController;
 use App\Http\Controllers\Pages\SliderController;
 use App\Http\Controllers\ProfileController;
@@ -77,6 +78,21 @@ Route::middleware(['auth', 'licence_verified'])->group(function () {
         Route::post('admin/service/update/title','ServiceTitleUpdate')->name('admin.service.update.title');
 
     });
+    // Add routes for Rezome  here
+    Route::controller(RezomeController::class)->group(function (){
+        Route::get('admin/rezome/manage','RezomeManager')->name('admin.rezome.manage');
+        Route::get('admin/rezome/add','RezomeAdd')->name('admin.rezome.add');
+        Route::post('admin/rezome/store','RezomeStore')->name('admin.rezome.store');
+        Route::get('admin/rezome/edit/{id}','RezomeEdit')->name('admin.rezome.edit');
+        Route::post('admin/rezome/update/','RezomeUpdate')->name('admin.rezome.update');
+        Route::get('admin/rezome/delete/{id}','RezomeDelete')->name('admin.rezome.delete');
+        //Uodate Rezome Title
+        Route::post('admin/rezome/title','RezomeTitle')->name('admin.rezome.title');
+        // Active Or InActive
+        Route::post('admin/rezome/active','RezomeActive')->name('admin.rezome.active');
+        Route::post('admin/rezome/inactive','RezomeInActive')->name('admin.rezome.inactive');
+    });
+
 });
 
 // Public routes for authentication and password management

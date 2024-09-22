@@ -1,70 +1,28 @@
+@php
+    $rezome_title=App\Models\RezomeTitle::latest()->first();
+    $rezome=App\Models\Rezome::latest()->get()
+@endphp
 <div class="experience" id="experience">
     <div class="container">
         <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-            <p>My Resume</p>
-            <h2>Working Experience</h2>
+            <p>{{ $rezome_title->title }}</p>
+            <h2>{{ $rezome_title->sub_title }}</h2>
         </header>
         <div class="timeline">
-            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">2045 - 2050</div>
-                    <h2>Web Developer</h2>
-                    <h4>Soft Agency, San Francisco, CA</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit semper pretium.
-                    </p>
+            @foreach($rezome as $index => $rezome_item)
+                @if($rezome_item->status != 0)
+                <div class="timeline-item {{ $index % 2 == 0 ? 'left' : 'right' }} wow slideIn{{ $index % 2 == 0 ? 'Left' : 'Right' }}" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">{{ $rezome_item->Jobـstartـdate }} - {{ $rezome_item->Jobـendـdate }}</div>
+                        <h2>{{ $rezome_item->jobـposition }}</h2>
+                        <h4>{{ $rezome_item->title }}</h4>
+                        <p>
+                            {!! strip_tags($rezome_item->description_rezome) !!}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">2045 - 2050</div>
-                    <h2>Web Developer</h2>
-                    <h4>Soft Agency, San Francisco, CA</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit semper pretium.
-                    </p>
-                </div>
-            </div>
-            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">2045 - 2050</div>
-                    <h2>Web Developer</h2>
-                    <h4>Soft Agency, San Francisco, CA</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit semper pretium.
-                    </p>
-                </div>
-            </div>
-            <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">2045 - 2050</div>
-                    <h2>Web Developer</h2>
-                    <h4>Soft Agency, San Francisco, CA</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit semper pretium.
-                    </p>
-                </div>
-            </div>
-            <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">2045 - 2050</div>
-                    <h2>Web Developer</h2>
-                    <h4>Soft Agency, San Francisco, CA</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit semper pretium.
-                    </p>
-                </div>
-            </div>
-            <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                <div class="timeline-text">
-                    <div class="timeline-date">2045 - 2050</div>
-                    <h2>Web Developer</h2>
-                    <h4>Soft Agency, San Francisco, CA</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus erat sagittis non. Ut blandit semper pretium.
-                    </p>
-                </div>
-            </div>
+                @endif
+            @endforeach
         </div>
     </div>
 </div>
