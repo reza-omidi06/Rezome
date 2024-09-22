@@ -22,7 +22,7 @@
                                         <input id="title" type="text" name="title" class="form-control" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="title_en" class="form-label"><span style="color:#ec0808;">*&nbsp</span>عنوان :عنوان(لاتین) : </label>
+                                        <label for="title_en" class="form-label"><span style="color:#ec0808;">*&nbsp</span>عنوان (لاتین) : </label>
                                         <input id="title_en" type="text" name="title_en" class="form-control" required>
                                     </div>
                                 </div>

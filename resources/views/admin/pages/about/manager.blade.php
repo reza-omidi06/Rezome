@@ -56,7 +56,7 @@
                                 <div class="row mb-3">
                                     <div class="col-md-4">
                                         <label for="portfolio_image" class="form-label">ابعاد عکس : <span style="color:#d52626;font-size: 0.7rem;">(683x854)</span></label>
-                                        <input name="image_about" class="form-control" type="file"   id="image"   style="width: 34%;">
+                                        <input name="image_about" class="form-control" type="file"   id="image"   style="width: 32%;">
                                         <input type="hidden" name="primary_image"id="primaryImage" value="" required>
                                         <br>
                                         <img id="showImage" class="rounded avatar-lg" src="{{asset(!empty($about_manager->image_about) ? $about_manager->image_about : 'uploads/no_images.jpg')}}" style="border: 1px solid;">

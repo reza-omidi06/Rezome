@@ -55,7 +55,7 @@
                                             %  {{$skill->skill_percentage}}
                                         </td>
                                         <td style="text-align:center;line-height: 3rem;">
-                                            {!! $skill->description !!}
+                                            {!! Str::limit($skill->description,10, ' ...') !!}
                                         </td>
                                         <td style="text-align:center;padding: 1.5rem 0;">
                                             <a href="{{route('admin.skill.edit',$skill->id)}}" class="btn btn-info sm" title="Edite Data">
@@ -65,12 +65,10 @@
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
                                         </td>
-
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div>

@@ -13,12 +13,19 @@
                 @if($rezome_item->status != 0)
                 <div class="timeline-item {{ $index % 2 == 0 ? 'left' : 'right' }} wow slideIn{{ $index % 2 == 0 ? 'Left' : 'Right' }}" data-wow-delay="0.1s">
                     <div class="timeline-text">
-                        <div class="timeline-date">{{ $rezome_item->Jobـstartـdate }} - {{ $rezome_item->Jobـendـdate }}</div>
+                        <div class="timeline-date">
+                            @if($rezome_item->Jobـendـdate != null)
+                                {{ $rezome_item->Jobـstartـdate }} - {{ $rezome_item->Jobـendـdate }}
+                            @else
+                                {{$rezome_item->Jobـstartـdate}}   -    تا کنون
+                            @endif
+                        </div>
                         <h2>{{ $rezome_item->jobـposition }}</h2>
                         <h4>{{ $rezome_item->title }}</h4>
                         <p>
                             {!! strip_tags($rezome_item->description_rezome) !!}
                         </p>
+
                     </div>
                 </div>
                 @endif

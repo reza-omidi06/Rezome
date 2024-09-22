@@ -10,7 +10,7 @@
                             <div class="container-fluid" style="padding:0;margin: 0;">
                                 <div class="row ">
                                     <div class="col-md-6" style="text-align: start;">
-                                        <h4 class="card-title">ویرایش اسلاید </h4>
+                                        <h4 class="card-title">اسلایدر اسلایدر </h4>
                                     </div>
                                 </div>
                             </div>
@@ -44,24 +44,38 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="row mb-3"  >
-                                    <div class="col-md-3">
-                                        <label></label>
-                                        <a href="{{route('admin.dynamic.edit')}}" class="btn btn-primary" >متن متحرک</a>
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingOne">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style=" background: #e7e7ff; color: #566a7f; ">
+                                                تغیر پس زمینه
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" style="padding:0.5rem;">
+                                            <div class="row mb-3"  >
+                                                <div class="col-md-3 m-auto" >
+                                                    <label></label>
+                                                    <a href="{{route('admin.dynamic.edit')}}" class="btn btn-primary" >متن متحرک</a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>رنگ پس زمینه </label>
+                                                    <br>
+                                                    <input name="background_color" type="color" value="{{$edit_slider->background_color}}" >
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>عکس پس زمینه</label>
+                                                    <input name="background_img" class="form-control" type="file"  id="image" style="width: 44%;">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img id="showImage" class="rounded avatar-lg" src="{{asset(!empty( $edit_slider->background_img) ? $edit_slider->background_img  : 'uploads/no_images.jpg')}}" style="border: 1px solid;">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <label>رنگ پس زمینه </label>
-                                        <br>
-                                        <input name="background_color" type="color" value="{{$edit_slider->background_color}}" >
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label>عکس پس زمینه</label>
-                                        <input name="background_img" class="form-control" type="file"  id="image" style="width: 44%;">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img id="showImage" class="rounded avatar-lg" src="{{asset(!empty( $edit_slider->background_img) ? $edit_slider->background_img  : 'uploads/no_images.jpg')}}" style="border: 1px solid;">
-                                    </div>
+
                                 </div>
+
+
                                 <hr>
                                 <div class="row mb-3">
                                     <div class="col-md-4">

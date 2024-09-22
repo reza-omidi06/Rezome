@@ -22,13 +22,13 @@
                                         <input id="skill_name" type="text" name="skill_name" class="form-control" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="skill_name_en" class="form-label"><span style="color:#ec0808;">*&nbsp</span>عنوان :عنوان(لاتین) : </label>
+                                        <label for="skill_name_en" class="form-label"><span style="color:#ec0808;">*&nbsp</span>عنوان (لاتین) : </label>
                                         <input id="skill_name_en" type="text" name="skill_name_en" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3 mb-3">
-                                        <label for="skill_percentage" class="form-label"> <span style="color:#ec0808;">*&nbsp</span>میزان مهارت : </label>
+                                        <label for="skill_percentage" class="form-label"> <span style="color:#ec0808;">*&nbsp</span>میزان مهارت (%) : </label>
                                         <input id="skill_percentage" type="number"  name="skill_percentage" class="form-control" required>
                                     </div>
                                     <div class="col-md-9 mb-3">
