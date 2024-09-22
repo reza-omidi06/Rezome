@@ -23,13 +23,13 @@
                                         <input id="skill_name" type="text" name="skill_name" class="form-control" value="{{$skill_edit->skill_name}}" >
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="skill_name_en" class="form-label">عنوان :عنوان(لاتین) : </label>
+                                        <label for="skill_name_en" class="form-label">عنوان (لاتین) : </label>
                                         <input id="skill_name_en" type="text" name="skill_name_en" class="form-control" value="{{$skill_edit->skill_name_en}}" >
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3 mb-3">
-                                        <label for="skill_percentage" class="form-label">میزان مهارت : </label>
+                                        <label for="skill_percentage" class="form-label">میزان مهارت (%) : </label>
                                         <input id="skill_percentage" type="number"  name="skill_percentage" class="form-control" value="{{$skill_edit->skill_percentage}}" >
                                     </div>
                                     <div class="col-md-9 mb-3">

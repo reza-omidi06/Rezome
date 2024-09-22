@@ -1,6 +1,6 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="{{route('home')}}" target="_blank" class="app-brand-link">
           <span class="app-brand-logo demo">
             <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <defs>
@@ -94,18 +94,13 @@
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <i class="menu-icon tf-icons bx bx-slider"></i>
                 <div data-i18n="Account Settings">اسلایدر</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{route('admin.slider.manage')}}" class="menu-link">
-                        <div data-i18n="Account">مدیریت</div>
-                    </a>
-                </li>
-                <li class="menu-item">
                     <a href="{{route('admin.slider.edit')}}" class="menu-link">
-                        <div data-i18n="Notifications">ویرایش</div>
+                        <div data-i18n="Notifications">مدیریت اسلایدر</div>
                     </a>
                 </li>
                 <li class="menu-item">
@@ -135,7 +130,7 @@
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-info-circle"></i>
+                <i class="menu-icon tf-icons bx bx-wrench"></i>
                 <div data-i18n="Account Settings">خدمات</div>
             </a>
             <ul class="menu-sub">
@@ -149,16 +144,11 @@
                         <div data-i18n="Account">درج خدمات</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
-                        <div data-i18n="Notifications">مهارت ها</div>
-                    </a>
-                </li>
             </ul>
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-info-circle"></i>
+                <i class="menu-icon tf-icons bx bx-detail"></i>
                 <div data-i18n="Account Settings">رزومه</div>
             </a>
             <ul class="menu-sub">
