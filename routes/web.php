@@ -10,6 +10,8 @@ use App\Http\Controllers\Pages\RezomeController;
 use App\Http\Controllers\Pages\ServicesController;
 use App\Http\Controllers\Pages\SliderController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Pages\PortflolioCategoryController;
+use App\Http\Controllers\Pages\PortfolioController;
 use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
@@ -87,6 +89,24 @@ Route::middleware(['auth', 'licence_verified'])->group(function () {
         Route::post('admin/rezome/active','RezomeActive')->name('admin.rezome.active');
         Route::post('admin/rezome/inactive','RezomeInActive')->name('admin.rezome.inactive');
     });
+    // Add routes for PortflolioCategory  here
+    Route::controller(PortflolioCategoryController::class)->group(function (){
+        Route::get('admin/portfoliocategory/manage','PortfolioCategoryManage')->name('admin.portfoliocategory.manage');
+        Route::get('admin/portfoliocategory/add','PortfolioCategoryAdd')->name('admin.portfoliocategory.add');
+        Route::post('admin/portfoliocategory/store','StorePortflolioCategory')->name('admin.portfoliocategory.store');
+        Route::get('admin/portfoliocategory/edit/{id}','PortfolioCategoryEdit')->name('admin.portfoliocategory.edit');
+        Route::post('admin/portfoliocategory/update','UpdatePortflolioCategory')->name('admin.portfoliocategory.update');
+        Route::get('admin/portfoliocategory/delete/{id}','PortfolioCategoryDelete')->name('admin.portfoliocategory.delete');
+    });
+    // Add routes for Portfolio  here
+    Route::controller(PortfolioController::class)->group(function (){
+        Route::get('admin/portfolio/manage','PortfolioManage')->name('admin.portfolio.manage');
+        Route::get('admin/portfolio/add','PortfolioAdd')->name('admin.portfolio.add');
+        Route::post('admin/portfolio/store','PortfolioStore')->name('admin.portfolio.store');
+        Route::get('admin/portfolio/edit/{id}','PortfolioEdit')->name('admin.portfolio.edit');
+        Route::post('admin/portfolio/update/','PortfolioUpdate')->name('admin.portfolio.update');
+        Route::get('admin/portfolio/delete/{id}','PortfolioDelete')->name('admin.portfolio.delete');
+    });
 
 });
 
@@ -102,3 +122,14 @@ Route::middleware(['guest'])->group(function () {
     Route::post('reset-password', [NewPasswordController::class, 'store'])->name('password.store');
 });
 //require __DIR__.'/auth.php';
+
+//step 1
+//1- add proftfolio category
+//2- manage proftfolio category
+//3- edit proftfolio category
+// step 2
+//1- manage proftfolio
+//2- add proftfolio
+//2.1-  foreach for add category to profil
+//3- edit proftfolio
+//

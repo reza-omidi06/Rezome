@@ -57,7 +57,7 @@
                                 <!--end row-->
                                 <div class="row mb-3">
                                     <div class="col-md-5">
-                                        <button type="submit" class="btn btn-primary">ویرایش</button>
+                                        <button type="submit" class="btn btn-primary">بروزرسانی</button>
                                     </div>
                                 </div>
                             </form>
