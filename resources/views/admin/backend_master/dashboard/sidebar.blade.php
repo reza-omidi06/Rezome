@@ -229,6 +229,50 @@
             </ul>
         </li>
         <!-- Components -->
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">نمونه کار</span></li>
+        <!-- User interface -->
+        <li class="menu-item">
+            <a href="javascript:void(0)" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-box"></i>
+                <div data-i18n="User interface">دسته بندی </div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{route('admin.portfoliocategory.manage')}}" class="menu-link">
+                        <div data-i18n="Accordion">مدیریت</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{route('admin.portfoliocategory.add')}}" class="menu-link">
+                        <div data-i18n="Alerts">افزودن</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Extended components -->
+        <li class="menu-item">
+            <a href="javascript:void(0)" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-copy"></i>
+                <div data-i18n="Extended UI">نمونه کار</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{route('admin.portfolio.manage')}}" class="menu-link">
+                        <div data-i18n="Perfect Scrollbar">مدیریت</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{route('admin.portfolio.add')}}" class="menu-link">
+                        <div data-i18n="Text Divider">افزودن </div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        </li>
+        <!---- ِend ----->
+        <!-- Components -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
         <!-- Cards -->
         <li class="menu-item">

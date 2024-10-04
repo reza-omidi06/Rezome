@@ -45,12 +45,15 @@
                                         <input id="Jobـendـdate" type="text" name="Jobـendـdate" class="form-control" >
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-9 mb-3">
-                                        <label for="description_rezome" class="form-label">توضیحات : </label>
-                                        <textarea id="elm1" type="text" name="description_rezome" class="form-control">
-
-                                        </textarea>
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <label for="image_services" class="form-label">ابعاد عکس : <span style="color:#d52626;font-size: 0.7rem;">(683x854)</span></label>
+                                        <input name="image_services" class="form-control" type="file"   id="image"   style="width: 32%;">
+                                        <input type="hidden" name="primary_image"id="primaryImage" value="">
+                                        <br>
+                                        <img id="showImage" class="rounded avatar-lg" src="{{asset('uploads/no_images.jpg')}}" style="border: 1px solid;">
+                                    </div>
+                                    <div class="col-md-3">
                                     </div>
                                 </div>
                                 <!--end row-->

@@ -42,5 +42,13 @@
     font-size: 14px;
     font-weight: bold;
     padding: 1rem;
-
+}
+.content-height{
+    margin:1rem auto;
+}
+.img_manag-cat{
+   width:4rem;
+    border:1px solid #000;
+    border-radius:50%;
+    height: auto;
 }
