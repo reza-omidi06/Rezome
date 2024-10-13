@@ -23,10 +23,10 @@ class AboutController extends Controller
         ]);
         $find_about_id=$request->id;
         if($request->file('image_about')){
-           $image_file=$request->file('image_about');
-           $name_genarator=time().'.'.$image_file->getClientOriginalExtension();
-           Image::make($image_file)->resize(683,854)->save('uploads/about/'.$name_genarator);
-           $image_path='uploads/about/'.$name_genarator;
+            $image_file=$request->file('image_about');
+            $name_genarator=time().'.'.$image_file->getClientOriginalExtension();
+            Image::make($image_file)->resize(683,854)->save('uploads/about/'.$name_genarator);
+            $image_path='uploads/about/'.$name_genarator;
             About::findOrFail($find_about_id)->update([
                 'title'=>$request->input('title'),
                 'description'=>$request->input('description'),

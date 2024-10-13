@@ -29,7 +29,7 @@
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus.
             </p>
-            <a class="btn">Pricing Plan</a>
+            <a class="btn" href="#price">Pricing Plan</a>
         </div>
     </div>
 </div>

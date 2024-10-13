@@ -34,8 +34,8 @@
 
     <link rel="stylesheet" href="{{asset('backend/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-
-
+    <!-- input-tags CSS -->
+    <link  href="{{asset('backend/assets/plugins/input-tags/css/tagsinput.css')}}" rel="stylesheet" />
     <!-- Page CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
@@ -129,8 +129,8 @@
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-<!--tinymce js-->
+<!--tagsinput js-->
+<script src="{{ asset('backend/assets/plugins/input-tags/js/tagsinput.js')}}"></script>
 
 
 <script src="{{asset('backend/assets/libs/tinymce/tinymce.min.js')}}"></script>

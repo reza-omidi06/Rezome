@@ -1,94 +1,48 @@
+@php
+    $view_plan_title = App\Models\PlanTitle::find(1)->first();
+    $view_plan = \App\Models\PlanType::with('features')->latest()->get();
+@endphp
+
 <div class="price" id="price">
     <div class="container">
         <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-            <p>Pricing Plan</p>
-            <h2>Affordable Price</h2>
+            <p>{{ $view_plan_title->title }}</p>
+            <h2>{{ $view_plan_title->sub_title }}</h2>
         </div>
         <div class="row">
-            <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="price-item">
-                    <div class="price-header">
-                        <div class="price-title">
-                            <h2>Basic</h2>
+            @foreach($view_plan as $plan)
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="price-item {{ $plan->special ? 'special-style' : '' }}">
+                        <div class="price-header">
+                            <div class="price-title">
+                                <h2>{{ $plan->name_type_fa }}</h2>
+                            </div>
+                            <div class="price-prices">
+                                <h2><small>تومان</small><span>{{ $plan->price_type }}</span></h2>
+                            </div>
                         </div>
-                        <div class="price-prices">
-                            <h2><small>$</small>49<span>/ mo</span></h2>
+                        <div class="price-body">
+                            <div class="price-description">
+                                <ul>
+                                    @foreach($plan->features as $feature)
+                                        @php
+                                            $featureList = explode(',', $feature->features);
+                                        @endphp
+                                        @foreach($featureList as $featureItem)
+                                            <li>{{ trim($featureItem) }}</li>
+                                        @endforeach
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="price-body">
-                        <div class="price-description">
-                            <ul>
-                                <li>Bootstrap 4</li>
-                                <li>Font Awesome 5</li>
-                                <li>Responsive Design</li>
-                                <li>Browser Compatibility</li>
-                                <li>Easy To Use</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="price-footer">
-                        <div class="price-action">
-                            <a class="btn" href="">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 wow fadeInUp" data-wow-delay="0.0s">
-                <div class="price-item featured-item">
-                    <div class="price-header">
-                        <div class="price-title">
-                            <h2>Standard</h2>
-                        </div>
-                        <div class="price-prices">
-                            <h2><small>$</small>99<span>/ mo</span></h2>
-                        </div>
-                    </div>
-                    <div class="price-body">
-                        <div class="price-description">
-                            <ul>
-                                <li>Bootstrap 4</li>
-                                <li>Font Awesome 5</li>
-                                <li>Responsive Design</li>
-                                <li>Browser Compatibility</li>
-                                <li>Easy To Use</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="price-footer">
-                        <div class="price-action">
-                            <a class="btn" href="">Order Now</a>
+                        <div class="price-footer">
+                            <div class="price-action">
+                                <!-- دکمه Order Now با data-plan-id -->
+{{--                                <a class="btn {{ $plan->special ? 'special-style-btn' : '' }}" href="#" >Order Now</a>--}}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="price-item">
-                    <div class="price-header">
-                        <div class="price-title">
-                            <h2>Premium</h2>
-                        </div>
-                        <div class="price-prices">
-                            <h2><small>$</small>149<span>/ mo</span></h2>
-                        </div>
-                    </div>
-                    <div class="price-body">
-                        <div class="price-description">
-                            <ul>
-                                <li>Bootstrap 4</li>
-                                <li>Font Awesome 5</li>
-                                <li>Responsive Design</li>
-                                <li>Browser Compatibility</li>
-                                <li>Easy To Use</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="price-footer">
-                        <div class="price-action">
-                            <a class="btn" href="">Order Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-</div>
