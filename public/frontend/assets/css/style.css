@@ -1,6 +1,24 @@
 /*******************************/
 /********* General CSS *********/
 /*******************************/
+.special-style {
+    border: 2px solid #ef233c38;
+    background-color: #f9f9f9;
+    margin: auto 1rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 4px;
+}
+.special-style-btn{
+    color: #ffffff !important;
+    background: #ff1111 !important;
+    box-shadow: inset 0 0 0 50px #ef233c !important;
+}
+.special-style-btn:hover{
+    color: #ffffff!important;
+    border:1px solid #414141!important;
+    background: #414141!important;
+    box-shadow: inset 0 0 0 50px #414141!important;
+}
 body {
     color: #797979;
     background: #ffffff;
@@ -993,6 +1011,9 @@ a:focus {
     position: relative;
     margin-bottom: 30px;
     background: #ffffff;
+    margin:auto 0.8rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 12px;
 }
 
 .price .featured-item {
@@ -1020,6 +1041,8 @@ a:focus {
     font-size: 25px;
     font-weight: 400;
     text-transform: uppercase;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.63);
+    padding-bottom: 1.5rem;
 }
 
 .price .price-prices h2 {
@@ -1032,14 +1055,15 @@ a:focus {
     position: absolute;
     font-size: 18px;
     font-weight: 400;
-    margin-top: 9px;
-    margin-left: -12px;
+    margin-top: 1.2rem;
+    margin-left: -2.4rem;
 }
 
 .price .price-prices h2 span {
     margin-left: 1px;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
+    color: #ef233c
 }
 
 .price .price-item.featured-item h2 {
@@ -1071,10 +1095,9 @@ a:focus {
 }
 
 .price .price-item .price-action .btn:hover {
-    color: #414141;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #414141;
-    border-color: #414141;
+    color: #ffffff ;
+    background: #ff1111;
+    box-shadow: inset 0 0 0 50px #ef233c;
 }
 
 .price .price-item.featured-item .price-action .btn {

@@ -4,6 +4,7 @@
             <i class="fa fa-quote-left"></i>
         </div>
         <div class="owl-carousel testimonials-carousel">
+
             <div class="testimonial-item">
                 <div class="testimonial-img">
                     <img src="{{asset('frontend/assets/img/testimonial-1.jpg')}}" alt="Image">
@@ -40,6 +41,7 @@
                     <h4>Profession</h4>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

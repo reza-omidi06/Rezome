@@ -6,12 +6,16 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Pages\AboutController;
+use App\Http\Controllers\Pages\FeaturesPlansController;
+use App\Http\Controllers\Pages\PlanTypeController;
+use App\Http\Controllers\Pages\PricingPlanController;
 use App\Http\Controllers\Pages\RezomeController;
 use App\Http\Controllers\Pages\ServicesController;
 use App\Http\Controllers\Pages\SliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Pages\PortflolioCategoryController;
 use App\Http\Controllers\Pages\PortfolioController;
+use App\Models\FeaturesPlans;
 use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
@@ -108,7 +112,35 @@ Route::middleware(['auth', 'licence_verified'])->group(function () {
         Route::get('admin/portfolio/delete/{id}','PortfolioDelete')->name('admin.portfolio.delete');
     });
 
-});
+    // Add routes for Type Plan  here
+    Route::controller(PlanTypeController::class)->group(function (){
+        Route::get('admin/plantype/manage','index')->name('admin.plantype.manage');
+        Route::get('admin/plantype/create','create')->name('admin.plantype.create');
+        Route::post('admin/plantype/store','store')->name('admin.plantype.store');
+        Route::get('admin/plantype/edit/{id}','edit')->name('admin.plantype.edit');
+        Route::post('admin/plantype/update','update')->name('admin.plantype.update');
+        Route::get('admin/plantype/destroy/{id}','destroy')->name('admin.plantype.destroy');
+        // Active Or InActive
+        Route::post('admin/plantype/active','PlanTypeActive')->name('admin.plantype.active');
+        Route::post('admin/plantype/inactive','PlanTypeInActive')->name('admin.plantype.inactive');
+        // Active Or InActive Special Btn
+        Route::post('admin/active/special','SpecialActive')->name('admin.active.special');
+        Route::post('admin/inactive/special','SpecialInActive')->name('admin.inactive.special');
+    });
+    // Add routes for Features Plans   here
+    Route::controller(FeaturesPlansController::class)->group(function (){
+        Route::get('admin/fecureplan/manage','index')->name('admin.fecureplan.manage');
+        Route::get('admin/fecureplan/create','create')->name('admin.fecureplan.create');
+        Route::post('admin/fecureplan/store','store')->name('admin.fecureplan.store');
+        Route::get('admin/fecureplan/edit/{id}','edit')->name('admin.fecureplan.edit');
+        Route::post('admin/fecureplan/update','update')->name('admin.fecureplan.update');
+        Route::get('admin/fecureplan/destroy/{id}','destroy')->name('admin.fecureplan.destroy');
+        // Change Title
+        Route::post('admin/titleplan/update','PlanTitleUpdate')->name('admin.titleplan.update');
+    });
+
+
+  });
 
 // Public routes for authentication and password management
 Route::middleware(['guest'])->group(function () {
@@ -123,13 +155,4 @@ Route::middleware(['guest'])->group(function () {
 });
 //require __DIR__.'/auth.php';
 
-//step 1
-//1- add proftfolio category
-//2- manage proftfolio category
-//3- edit proftfolio category
-// step 2
-//1- manage proftfolio
-//2- add proftfolio
-//2.1-  foreach for add category to profil
-//3- edit proftfolio
-//
+//img / discription / custom / profession /show or shadow
