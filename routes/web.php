@@ -1,5 +1,6 @@
 <?php
-
+use App\Exports\TestimonialsExport;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\NewPasswordController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Pages\PricingPlanController;
 use App\Http\Controllers\Pages\RezomeController;
 use App\Http\Controllers\Pages\ServicesController;
 use App\Http\Controllers\Pages\SliderController;
+use App\Http\Controllers\Pages\TestimonialController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Pages\PortflolioCategoryController;
 use App\Http\Controllers\Pages\PortfolioController;
@@ -36,6 +38,9 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
     Route::get('/', function () {return view('site.index');})->name('home');
     Route::get('/licence', [AdminPanelController::class, 'Showform'])->name('licence');
     Route::post('/licence/update', [AdminPanelController::class, 'UpdateLicence'])->name('licence.update');
+    Route::controller(TestimonialController::class)->group(function (){
+        Route::post('admin/testimonial/store','store')->name('admin.testimonial.store');
+    });
 
 // Routes for users with verified license and authentication
 Route::middleware(['auth', 'licence_verified'])->group(function () {
@@ -139,8 +144,23 @@ Route::middleware(['auth', 'licence_verified'])->group(function () {
         Route::post('admin/titleplan/update','PlanTitleUpdate')->name('admin.titleplan.update');
     });
 
+    // Add routes for Testimonial here
 
-  });
+    Route::controller(TestimonialController::class)->group(function (){
+        Route::get('admin/testimonial/manage','index')->name('admin.testimonial.manage');
+        Route::get('admin/testimonial/view/{id}','view')->name('admin.testimonial.view');
+        Route::get('admin/testimonial/destroy/{id}','destroy')->name('admin.testimonial.destroy');
+        Route::post('admin/testimonial/show','Show')->name('admin.testimonial.show');
+        Route::post('admin/testimonial/hidden','Hidden')->name('admin.testimonial.hidden');
+
+    });
+    Route::get('/export-testimonials', function () {
+        return Excel::download(new TestimonialsExport, 'testimonials.xlsx');
+    })->name('export.testimonials');
+
+
+
+});
 
 // Public routes for authentication and password management
 Route::middleware(['guest'])->group(function () {
@@ -152,7 +172,7 @@ Route::middleware(['guest'])->group(function () {
     Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
     Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])->name('password.reset');
     Route::post('reset-password', [NewPasswordController::class, 'store'])->name('password.store');
+
 });
 //require __DIR__.'/auth.php';
 
-//img / discription / custom / profession /show or shadow

@@ -111,7 +111,7 @@ class RezomeController extends Controller
         ]);
         $notification = array(
             'message' => 'غیر فعال شد',
-            'alert-type' => 'success' // تغییر به 'success' برای موفقیت
+            'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
 
