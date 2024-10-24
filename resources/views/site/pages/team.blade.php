@@ -1,3 +1,4 @@
+
 <div class="team" id="team">
     <div class="container">
         <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
@@ -88,3 +89,35 @@
         </div>
     </div>
 </div>
+
+<!--
+<link href="{{asset('frontend/assets/css/style_comment.css')}}" rel="stylesheet">
+
+<script src="{{asset('frontend/assets/js/main_comment.js')}}"></script>
+<script src="{{asset('frontend/assets/js/jquery-3.3.1.min.js')}}"></script>
+<div class="wrapper">
+    <div class="inner">
+        <div class="image-holder">
+            <img src="{{asset('frontend/assets/img/registration-form-6.jpg')}}" alt="">
+        </div>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <h3>Make An Appointment</h3>
+            <div class="form-row">
+                <input type="text" class="form-control" placeholder="Name">
+                <input type="text" class="form-control" placeholder="Mail">
+            </div>
+            <div class="form-row">
+                <input type="text" class="form-control" placeholder="Phone">
+                <div class="form-holder">
+                    <input type="text" class="form-control" placeholder="Phone">
+                </div>
+            </div>
+            <textarea name="" id="" placeholder="Message" class="form-control" style="height: 130px;"></textarea>
+            <button>Book Now
+                <i class="zmdi zmdi-long-arrow-right"></i>
+            </button>
+        </form>
+
+    </div>
+</div>
+-->

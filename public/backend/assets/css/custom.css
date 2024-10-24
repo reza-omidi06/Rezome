@@ -52,4 +52,41 @@
     border-radius:50%;
     height: auto;
 }
+.testimonial_col_fo{
+    border: 1px solid #d6d6d6;
+    padding: 0.5rem 0.8rem 0 0;
+    margin: 5px 7px;
+    border-radius: 7px;
+}
+.c-fluid{
+   padding-right: 0.8rem;
+    padding-left: 0.8rem;
+}
+.row_tes {
+    --bs-gutter-x: 2.625rem;
+}
+.h5_cus{
+    color: #6a6cff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.span_cus{
+    color: #464646;
+}
+.status_manager{
+    border: 1px solid #218838;
+    border-radius: 50%;
+    color: #218838;
+    background: #218838;
+    font-size: 7px;
+    padding: 0 3px;
+}
+.status_manager_danger{
+    border: 1px solid #d52626;
+    border-radius: 50%;
+    color: #d52626;
+    background: #d52626;
+    font-size: 7px;
+    padding: 0 3px;
+}
 
