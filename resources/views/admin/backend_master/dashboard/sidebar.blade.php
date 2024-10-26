@@ -166,13 +166,26 @@
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <i class="menu-icon fa fa-comment"></i>
                 <div data-i18n="Account Settings">نظرات</div>
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="{{route('admin.testimonial.manage')}}" class="menu-link">
                         <div data-i18n="Account">مدیریت</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon  fa fa-address-card"></i>
+                <div data-i18n="Account Settings">تماس با ما</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{route('admin.contact.manage')}}" class="menu-link">
+                        <div data-i18n="Account">پیام ها</div>
                     </a>
                 </li>
             </ul>

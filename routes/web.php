@@ -1,5 +1,6 @@
 <?php
 use App\Exports\TestimonialsExport;
+use App\Http\Controllers\Pages\ContactUsController;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -40,6 +41,9 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
     Route::post('/licence/update', [AdminPanelController::class, 'UpdateLicence'])->name('licence.update');
     Route::controller(TestimonialController::class)->group(function (){
         Route::post('admin/testimonial/store','store')->name('admin.testimonial.store');
+    });
+    Route::controller(ContactUsController::class)->group(function (){
+        Route::post('admin/contact/store','store')->name('admin.contact.store');
     });
 
 // Routes for users with verified license and authentication
@@ -157,7 +161,12 @@ Route::middleware(['auth', 'licence_verified'])->group(function () {
     Route::get('/export-testimonials', function () {
         return Excel::download(new TestimonialsExport, 'testimonials.xlsx');
     })->name('export.testimonials');
-
+    // Add routes for Contact-Us here
+    Route::controller(ContactUsController::class)->group(function (){
+        Route::get('admin/contact/manage','index')->name('admin.contact.manage');
+        Route::get('admin/contact/show/{id}','show')->name('admin.contact.show');
+        Route::get('admin/contact/destroy/{id}','destroy')->name('admin.contact.destroy');
+    });
 
 
 });
