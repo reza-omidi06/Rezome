@@ -1,6 +1,7 @@
 <?php
 use App\Exports\TestimonialsExport;
 use App\Http\Controllers\Pages\ContactUsController;
+use App\Http\Controllers\Pages\SettingController;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -167,8 +168,11 @@ Route::middleware(['auth', 'licence_verified'])->group(function () {
         Route::get('admin/contact/show/{id}','show')->name('admin.contact.show');
         Route::get('admin/contact/destroy/{id}','destroy')->name('admin.contact.destroy');
     });
-
-
+    Route::controller(SettingController::class)->group(function (){
+        Route::get('admin/setting/index','index')->name('admin.setting.index');
+        Route::post('admin/setting/update','update')->name('admin.setting.update');
+        Route::post('admin/setting/delete-photo','deletePhoto')->name('admin.setting.deletePhoto');
+    });
 });
 
 // Public routes for authentication and password management
