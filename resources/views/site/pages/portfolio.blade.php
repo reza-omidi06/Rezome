@@ -11,15 +11,10 @@
         <div class="row">
             <div class="col-12">
                 <ul id="portfolio-filter">
-                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter="*" class="filter-active">همه</li>
                     @foreach($categoriys as $category)
                     <li data-filter=".filter-{{$category->id}}">{{$category->name_portfolio_category}}</li>
                     @endforeach
-                    <!--
-                    <li data-filter=".filter-1">Web Design</li>
-                    <li data-filter=".filter-2">Mobile Apps</li>
-                    <li data-filter=".filter-3">Game Dev</li>
--->
                 </ul>
             </div>
         </div>
