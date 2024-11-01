@@ -168,10 +168,18 @@ Route::middleware(['auth', 'licence_verified'])->group(function () {
         Route::get('admin/contact/show/{id}','show')->name('admin.contact.show');
         Route::get('admin/contact/destroy/{id}','destroy')->name('admin.contact.destroy');
     });
+    // Add routes for Setting here
     Route::controller(SettingController::class)->group(function (){
+        //Header Setting
         Route::get('admin/setting/index','index')->name('admin.setting.index');
         Route::post('admin/setting/update','update')->name('admin.setting.update');
         Route::post('admin/setting/delete-photo','deletePhoto')->name('admin.setting.deletePhoto');
+        //Footer Setting
+        Route::get('admin/setting/footer','footer')->name('admin.setting.footer');
+        Route::post('admin/setting/footer','FooterUpdate')->name('admin.setting.footer');
+
+
+
     });
 });
 
