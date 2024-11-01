@@ -358,8 +358,8 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="ui-alerts.html" class="menu-link">
-                        <div data-i18n="Alerts">Alerts</div>
+                    <a href="{{route('admin.setting.footer')}}" class="menu-link">
+                        <div data-i18n="Alerts">فوتر</div>
                     </a>
                 </li>
                 <li class="menu-item">
