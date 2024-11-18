@@ -1,6 +1,9 @@
 <?php
+
+use App\Exports\OrdersExport;
 use App\Exports\TestimonialsExport;
 use App\Http\Controllers\Pages\ContactUsController;
+use App\Http\Controllers\Pages\OrderController;
 use App\Http\Controllers\Pages\SettingController;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\AdminPanelController;
@@ -42,6 +45,9 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
     Route::post('/licence/update', [AdminPanelController::class, 'UpdateLicence'])->name('licence.update');
     Route::controller(TestimonialController::class)->group(function (){
         Route::post('admin/testimonial/store','store')->name('admin.testimonial.store');
+    });
+    Route::controller(OrderController::class)->group(function (){
+        Route::post('admin/order/store','store')->name('admin.order.store');
     });
     Route::controller(ContactUsController::class)->group(function (){
         Route::post('admin/contact/store','store')->name('admin.contact.store');
@@ -177,10 +183,21 @@ Route::middleware(['auth', 'licence_verified'])->group(function () {
         //Footer Setting
         Route::get('admin/setting/footer','footer')->name('admin.setting.footer');
         Route::post('admin/setting/footer','FooterUpdate')->name('admin.setting.footer');
-
-
-
     });
+    // Add routes for Order here
+
+    Route::controller(OrderController::class)->group(function (){
+        Route::get('admin/order/manage','index')->name('admin.order.manage');
+        Route::post('admin/order/setting','update')->name('admin.order.setting');
+        Route::get('admin/order/show/{id}','show')->name('admin.order.show');
+        Route::get('admin/order/destroysetting/{id}','destroySetting')->name('admin.order.destroysetting');
+        Route::get('admin/order/destroy/{id}','destroy')->name('admin.order.destroy');
+        Route::post('admin/attachment/active','AttachmentActive')->name('admin.attachment.active');
+        Route::post('admin/attachment/inactive','AttachmentInActive')->name('admin.attachment.inactive');
+    });
+    Route::get('/export/order', function () {
+        return Excel::download(new OrdersExport, 'orders.xlsx');
+    })->name('export.order');
 });
 
 // Public routes for authentication and password management

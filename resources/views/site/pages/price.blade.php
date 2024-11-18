@@ -13,7 +13,7 @@
             @foreach($view_plan as $plan)
                 <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="price-item {{ $plan->special ? 'special-style' : '' }}">
-                        <div class="price-header">
+                        <div class="price-header">x
                             <div class="price-title">
                                 <h2>{{ $plan->name_type_fa }}</h2>
                             </div>
@@ -37,8 +37,6 @@
                         </div>
                         <div class="price-footer">
                             <div class="price-action">
-                                <!-- دکمه Order Now با data-plan-id -->
-{{--                                <a class="btn {{ $plan->special ? 'special-style-btn' : '' }}" href="#" >Order Now</a>--}}
                             </div>
                         </div>
                     </div>
