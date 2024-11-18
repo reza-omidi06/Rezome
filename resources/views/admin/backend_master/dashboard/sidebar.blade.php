@@ -179,6 +179,19 @@
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon fa fa-shopping-basket"></i>
+                <div data-i18n="Account Settings">سفارشات</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{route('admin.order.manage')}}" class="menu-link">
+                        <div data-i18n="Account">مدیریت</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon  fa fa-address-card"></i>
                 <div data-i18n="Account Settings">تماس با ما</div>
             </a>

@@ -39,30 +39,21 @@
 @include('site.pages.portfolio')
 <!-- Portfolio End -->
 
-<!-- Banner Start -->
-<div class="banner wow zoomIn" data-wow-delay="0.1s">
-    <div class="container">
-        <div class="section-header text-center">
-            <p>Awesome Discount</p>
-            <h2>Get <span>30%</span> Discount</h2>
-        </div>
-        <div class="container banner-text">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus.
-            </p>
-            <a class="btn">Order Now</a>
-        </div>
-    </div>
-</div>
-<!-- Banner End -->
+<!-- Testimonial Start -->
+@include('site.pages.testimonial')
+<!-- Testimonial End -->
+
+
+
 
 <!-- Price Start -->
 @include('site.pages.price')
 <!-- Price End -->
 
-<!-- Testimonial Start -->
-@include('site.pages.testimonial')
-<!-- Testimonial End -->
+<!-- Banner Start -->
+@include('site.pages.order')
+<!-- Banner End -->
+
 
 <!-- Team Start -->
 @include('site.pages.team')

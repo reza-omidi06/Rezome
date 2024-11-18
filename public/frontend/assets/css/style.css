@@ -930,16 +930,6 @@ a:focus {
 }
 
 
-/*******************************/
-/********* Banner CSS **********/
-/*******************************/
-.banner {
-    position: relative;
-    width: 100%;
-    margin: 45px 0;
-    padding: 90px 0;
-    background: #EF233C;
-}
 
 .banner .container {
     max-width: 750px;
@@ -981,8 +971,8 @@ a:focus {
 }
 
 .banner .banner-text .btn:hover {
-    color: #ffffff;
-    background: transparent;
+    color: #ef233c;
+    background: #ffffffde;
     box-shadow: inset 0 0 0 0 #ffffff;
     border-color: #ffffff;
 }
@@ -1738,5 +1728,18 @@ a:focus {
 .span-st{
     font-size: 18px;
     font-weight: 500;
+}
+
+.btn-submit-order{
+    margin-top: 15px;
+    color: #ffffff!important;
+    background: #04AA6D!important;
+    box-shadow: inset 0 0 0 50px #04AA6D!important;
+}
+.btn-close-order{
+    margin-top: 15px;
+    color: #ffffff!important;
+    background: #ef233c!important;
+    box-shadow: inset 0 0 0 50px #ef233c!important;
 }
 
