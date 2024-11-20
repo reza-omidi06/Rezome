@@ -3,6 +3,7 @@
 use App\Exports\OrdersExport;
 use App\Exports\TestimonialsExport;
 use App\Http\Controllers\Pages\ContactUsController;
+use App\Http\Controllers\Pages\ContinerSettingController;
 use App\Http\Controllers\Pages\OrderController;
 use App\Http\Controllers\Pages\SettingController;
 use Maatwebsite\Excel\Facades\Excel;
@@ -198,6 +199,13 @@ Route::middleware(['auth', 'licence_verified'])->group(function () {
     Route::get('/export/order', function () {
         return Excel::download(new OrdersExport, 'orders.xlsx');
     })->name('export.order');
+
+    // Add routes for Container here
+    Route::controller(ContinerSettingController::class)->group(function (){
+        Route::get('admin/container/manage','index')->name('admin.container.manage');
+        Route::post('admin/container/store','update')->name('admin.container.store');
+        Route::get('admin/container/destroy/{id}','destroy')->name('admin.container.destroy');
+    });
 });
 
 // Public routes for authentication and password management
