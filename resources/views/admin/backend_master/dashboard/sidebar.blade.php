@@ -192,6 +192,19 @@
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account Settings">کانتینر</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{route('admin.container.manage')}}" class="menu-link">
+                        <div data-i18n="Account">مدیریت</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon  fa fa-address-card"></i>
                 <div data-i18n="Account Settings">تماس با ما</div>
             </a>
