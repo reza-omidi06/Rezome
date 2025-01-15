@@ -11,7 +11,7 @@
     .banner {
         position: relative;
         width: 100%;
-        margin: 45px 0;
+        margin: 45px 0 0 0;
         padding: 90px 0;
         background:{{$setting->order_setting_back_color}};
         /*background: #EF233C;*/

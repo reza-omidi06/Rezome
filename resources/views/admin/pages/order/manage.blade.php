@@ -134,9 +134,9 @@
                                                     <br>
                                                     <input type="hidden" name="order_setting_back_attachment" value="{{ $order_setting->order_setting_back_attachment }}">
                                                     @if($order_setting->order_setting_back_attachment == 1)
-                                                        <button type="button" class="btn btn-primary" onclick="changeAttachment(0)">ثابت</button>
+                                                        <button type="button" class="btn btn-primary" onclick="changeAttachment(0)">پوشش خودکار</button>
                                                     @else
-                                                        <button type="button" class="btn btn-success" onclick="changeAttachment(1)">پوشش خودکار</button>
+                                                        <button type="button" class="btn btn-success" onclick="changeAttachment(1)">ثابت</button>
                                                     @endif
                                                 </div>
                                                 <!-- پایان بخش ثابت بودن پس زمینه -->

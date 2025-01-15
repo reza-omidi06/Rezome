@@ -218,6 +218,19 @@
         </li>
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon  fa fa-address-card"></i>
+                <div data-i18n="Account Settings">مدیریت تیم</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{route('admin.myteam.manage')}}" class="menu-link">
+                        <div data-i18n="Account">مدیریت</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Account Settings</div>
             </a>
@@ -347,6 +360,27 @@
             </ul>
         </li>
 
+        <!--Team-->
+        <li class="menu-header small text-uppercase"><span class="menu-header-text">تیم </span></li>
+        <!-- User interface -->
+        <li class="menu-item">
+            <a href="javascript:void(0)" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-box"></i>
+                <div data-i18n="User interface">تیم ها </div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{route('admin.myteam.manage')}}" class="menu-link">
+                        <div data-i18n="Accordion">مدیریت</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{route('admin.plantype.create')}}" class="menu-link">
+                        <div data-i18n="Alerts">افزودن</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
         <!-- Extended components -->
         <li class="menu-item">
             <a href="javascript:void(0)" class="menu-link menu-toggle">

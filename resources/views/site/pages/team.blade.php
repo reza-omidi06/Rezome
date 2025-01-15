@@ -1,9 +1,46 @@
-
+@php
+    $setting=App\Models\MyTeamSet::find(1)->first();
+@endphp
+{{--'my_team_top_head_color',--}}{{-- done--}}
+{{--'my_team_head_color',--}}{{--donex--}}
+{{--'my_team_bg_color',--}}{{--done--}}
+{{--'my_team_bg_image',--}}{{-- done--}}
+{{--'my_team_background_attachment',--}}
+<style>
+    /*******************************/
+    /*********** Team CSS **********/
+    /*******************************/
+    .team {
+        position: relative;
+        width: 100%;
+        padding: 65px 0 20px 0;
+        background-color: {{$setting->my_team_bg_color}};
+        background-image: url("{{$setting->my_team_bg_image}}");
+        @if($setting->my_team_background_attachment != 1)
+            Background-attachment: unset;
+        @else
+            Background-attachment: fixed;
+        @endif
+    }
+    .section-header p::before {
+        position: absolute;
+        content: "";
+        height: 3px;
+        top: 11px;
+        right: 0;
+        left: -30px;
+        background: #5d5ea5;
+        z-index: -1;
+    }
+    .section-header p::after {
+        background: {{$setting->my_team_top_head_color}};
+    }
+</style>
 <div class="team" id="team">
     <div class="container">
         <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-            <p>My Team</p>
-            <h2>Expert Team Members</h2>
+            <p style="color: {{$setting->my_team_top_head_color}}; background:#ffffff00;">{{$setting->my_team_top_head}}</p>
+            <h2 style="color: {{$setting->my_team_head_color}};">{{$setting->my_team_head}}</h2>
         </div>
         <div class="row">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">

@@ -98,3 +98,9 @@
     font-weight: 400;
     padding: 0.7rem;
 }
+.img_team{
+    width: 65px;
+    height: auto;
+    border: 1px solid #b8b8b8;
+    border-radius: 50%;
+}
