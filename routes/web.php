@@ -4,6 +4,7 @@ use App\Exports\OrdersExport;
 use App\Exports\TestimonialsExport;
 use App\Http\Controllers\Pages\ContactUsController;
 use App\Http\Controllers\Pages\ContinerSettingController;
+use App\Http\Controllers\pages\MyteamController;
 use App\Http\Controllers\Pages\OrderController;
 use App\Http\Controllers\Pages\SettingController;
 use Maatwebsite\Excel\Facades\Excel;
@@ -206,6 +207,23 @@ Route::middleware(['auth', 'licence_verified'])->group(function () {
         Route::post('admin/container/store','update')->name('admin.container.store');
         Route::get('admin/container/destroy/{id}','destroy')->name('admin.container.destroy');
     });
+    // Add routes for My Team here
+    Route::controller(MyteamController::class)->group(function(){
+        //My Team Setting
+        Route::get('admin/myteam/manage','index')->name('admin.myteam.manage');
+        Route::post('admin/team/settingteam','SettingUpdate')->name('admin.team.settingteam');
+        Route::get('admin/myteam/delete/{id}','Delete')->name('admin.myteam.delete');
+        //My Team
+        Route::get('admin/myteam/create','create')->name('admin.myteam.create');
+        Route::post('admin/myteam/store','store')->name('admin.myteam.store');
+        Route::get('admin/myteam/edit/{id}','edit')->name('admin.myteam.edit');
+        Route::post('admin/myteam/update','update')->name('admin.myteam.update');
+        Route::get('admin/myteam/destroy','destroy')->name('admin.myteam.destroy');
+        Route::post('admin/mytem/attachment/active','MyTeamAttachmentActive')->name('admin.mytem.attachment.active');
+        Route::post('admin/mytem/attachment/inactive','MyTeamAttachmentInActive')->name('admin.mytem.attachment.inactive');
+    });
+
+
 });
 
 // Public routes for authentication and password management

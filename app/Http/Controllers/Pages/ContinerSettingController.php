@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContinerSetting;
+use App\Models\MyTeamSet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
@@ -131,7 +132,7 @@ class ContinerSettingController extends Controller
         $filePath = public_path('uploads/container/' . $imagecontainer->cont_background_image);
 
         if ($imagecontainer->cont_background_image && File::exists($filePath)) {
-            // حذف فایل از سرور
+
             File::delete($filePath);
         }
 

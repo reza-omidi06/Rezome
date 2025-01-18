@@ -1,5 +1,6 @@
 @extends('admin.backend_master.dashboard.master_page')
 @section('admin')
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="page-content">
         <div class="container-fluid">
@@ -96,6 +97,7 @@
                                         <input id="footer_copy-right" type="text" name="footer_copy_right" class="form-control" value="{{$foote_duct->footer_copy_right}}" >
                                     </div>
                                 </div>
+
                                 <!--end row-->
                                 <div class="row mb-3">
                                     <div class="col-md-5">
